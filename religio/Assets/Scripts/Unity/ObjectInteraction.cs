@@ -13,11 +13,13 @@ public class ObjectInteraction : MonoBehaviour {
 	public Collider[] m_childcolliders;
 	public Transform m_focalpoint;
 	public Vector3 m_restpos;
+	public Quaternion m_restrot;
 	public bool m_focused;
 
 	// Use this for initialization
 	void Reset () {
 		m_restpos = transform.position;
+		m_restrot = transform.rotation;
 		m_root = transform.Find("Root").gameObject;
 		m_anim = m_root.GetComponent<Animator>();
 		m_focalpoint = GameObject.Find("FocalPoint").transform;
@@ -32,16 +34,25 @@ public class ObjectInteraction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (m_focused == true)
+		if (m_focused == true) {
 			transform.position = Vector3.Lerp(
 				transform.position,
 				m_focalpoint.position,
 				k_damping);
-		else
+			transform.rotation = Quaternion.Lerp(
+				transform.rotation,
+				m_focalpoint.rotation,
+				k_damping);
+		} else {
 			transform.position = Vector3.Lerp(
 				transform.position,
 				m_restpos,
 				k_damping);
+			transform.rotation = Quaternion.Lerp(
+				transform.rotation,
+				m_restrot,
+				k_damping);
+		}
 	}
 
 	public Collider[] Colliders() {
