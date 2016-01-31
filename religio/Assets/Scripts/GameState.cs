@@ -13,6 +13,10 @@ public class GameState : MonoBehaviour {
 	public City[] cities;
 	//public List<Organization> corporations;
 
+	public void Start() {
+		player = gameObject.AddComponent<Organization>();
+	}
+
 	//returns change in followers
 	public int RecalculateFollowers() {
 		int newAmount = 0;

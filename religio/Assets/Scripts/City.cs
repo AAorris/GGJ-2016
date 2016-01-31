@@ -6,9 +6,10 @@ using System.IO;
 
 public class City : Organization {
 
-	public int population = UnityEngine.Random.Range(10000, 200000);
+	public int population;
 		
 	public void Start() {
+		population = UnityEngine.Random.Range(10000, 200000);
 		name = StringListReader.GetRandom ("CityNames");
 		Randomize ();
 	}
