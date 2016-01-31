@@ -22,7 +22,13 @@ public class ClickSender : MonoBehaviour {
 
 	void Update() {
 		ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-		m_clickedon = Physics.Raycast(ray, out hit, Mathf.Infinity);
+
+		m_clickedon = false;
+		Physics.Raycast(ray, out hit, Mathf.Infinity);
+		foreach (Collider collider in m_interactions.Colliders()) {
+			if (hit.collider == collider)
+				m_clickedon = true;
+		}
 
 		if (Input.GetMouseButtonDown(0) && !k_negate && !m_clickedon)
             m_interactions.Defocus();
