@@ -4,10 +4,7 @@ using UnityEngine.SceneManagement;
 [System.Serializable]
 public class SceneController : MonoBehaviour {
 
-	public int dayScene = 1;
-
-	SceneController(){
-	}
+	public int dayScene;
 
 	public void ShowNight() {
 		//TODO switch the scene view
@@ -15,6 +12,7 @@ public class SceneController : MonoBehaviour {
 
 	public void ShowDay() { 
 		//TODO switch the scene view
+		Debug.Log("Showing Scene " + dayScene);
 		SceneManager.LoadScene(dayScene);
 	}
 }

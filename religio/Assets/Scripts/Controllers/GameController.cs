@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	public void BeginGame() {
-		sceneController.dayScene = 1;
+		// sceneController.dayScene = 1;
 		StartNextDay();
 	}
 

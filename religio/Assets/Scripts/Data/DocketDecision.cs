@@ -35,6 +35,7 @@ public class DocketDecision : Decision {
 		ObjectInteraction interaction = GetComponent<ObjectInteraction> ();
 		interaction.Defocus ();
 
+		Debug.Log("Accepting click...");
 		//create a character thing
 		character = Instantiate (characterPrefab);
 		dialog = Instantiate (dialogPrefab);
@@ -46,7 +47,7 @@ public class DocketDecision : Decision {
 		for(int i = 0; i < 3; ++i){
 			buttons[i].gameObject.GetComponentInChildren<Text> ().text = definition.options[i].description;
 			buttons[i].onClick.AddListener (() => ButtonClicked (i));
-			}
+		}
 	}
 
 	public void CharacterLeave() {
