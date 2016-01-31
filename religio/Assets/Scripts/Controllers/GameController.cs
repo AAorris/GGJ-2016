@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour {
 	public void EndDay() {
 
 		//TODO update the game state based on the decision set actions
-
+		dayController.decisionSet.Destroy ();
 		sceneController.ShowNight ();
 		isDay = false;
 	}

@@ -21,13 +21,11 @@ public class Document : MonoBehaviour {
 	}
 
 	public void SetTitle(string text) {
-		Debug.Log(text);
 		m_title = text;
 		document_title.text = text;
 	}
 
 	public void SetBody(string text) {
-		Debug.Log(text);
 		m_body = text;
 		document_body.text = text;
 	}

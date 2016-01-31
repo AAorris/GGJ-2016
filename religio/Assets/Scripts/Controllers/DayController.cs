@@ -27,20 +27,19 @@ public class DayController : MonoBehaviour {
 		}
 
 		d = memoDelta;
-		foreach( GameObject paper in decisions.memos ) {
-			paper.transform.SetParent (memoRoot);
-			paper.transform.position = memoRoot.position;
-			paper.transform.position += d;
+		foreach( GameObject memo in decisions.memos ) {
+			memo.transform.SetParent (memoRoot);
+			memo.transform.position = memoRoot.position;
+			memo.transform.position += d;
 			d += memoDelta;
 		}
 
 		d = docetDelta;
-		foreach( GameObject paper in decisions.docets ) {
-			paper.transform.SetParent (docetRoot);
-			paper.transform.position = docetRoot.position;
-			paper.transform.position += d;
+		foreach( GameObject docet in decisions.docets ) {
+			docet.transform.SetParent (docetRoot);
+			docet.transform.position = docetRoot.position;
+			docet.transform.position += d;
 			d += docetDelta;
 		}
-		
 	}
 }
