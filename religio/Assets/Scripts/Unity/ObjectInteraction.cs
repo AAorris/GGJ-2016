@@ -6,7 +6,7 @@ public class ObjectInteraction : MonoBehaviour {
 	RaycastHit hit;
     Ray ray;
 
-    public float k_damping = 0.025f;
+    public float k_damping = 0.1f;
 
 	public Animator m_anim;
 	public GameObject m_root;
